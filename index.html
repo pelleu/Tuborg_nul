@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<! ----------HTML ---------->
+
+    <nav>
+
+
+        <div class="logo">
+            <a href="index.html"><img alt=""></a>
+        </div>
+
+
+        <ul class="nav-links">
+            <li>
+                <a href="produkter.html?kunstner=alle"><button class="filter valgt">VIDEO</button></a>
+            </li>
+
+        </ul>
+
+
+
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+
+
+    <body>
+        <section id="background-image">
+
+            <div id="pil_container" class="pil_position">
+                <a class="explore_album" href="#loopview">
+
+                </a>
+                <a href="#info" id="pil_sprite"></a>
+
+
+
+            </div>
+        </section>
+
+        <section id="info">
+
+            <div class="column_left">
+                <div class="about_us_billede"><img src="OM_NUL.png"></div>
+                <div class="about_us_text">
+                    <p>Når Tuborg siger NUL, så mener vi nul!<br> Ikke 0,2% eller 0,5% men 0% alkohol.<br> Og når vi brygger en pilsner helt uden alkohol,<br> så fylder vi den med lige så meget Tuborg kvalitet,<br> som når vi brygger vores øvrige øl.<br> Som resultat kan du nu nyde en forfriskende,<br> let drikkelig, velskummende og velsmagende Tuborg NUL,<br> helt uden alkohol. Tuborg NUL ligner en pilsner,<br> Tuborg NUL smager som en pilsner, fordi Tuborg NUL er en pilsner.</p>
+                </div>
+            </div>
+            <div class="column_right">
+                <video width="100%" height="100%" controls>
+                    <source src="f%C3%B8rste%20udgave.mp4" type="video/mp4">
+                    <source src="movie.ogg" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video></div>
+
+
+        </section>
+
+
+        <section id="grafik">
+
+            <div class="column_left">
+                <svg id="barchart" viewbox="-20 -10 230 120">
+                    <g id="chart">
+                        <text x="13" y="-3"> Alkoholfrie øl i Danmark fra år 2010 til 2020</text>
+                        <text x="-13" y="-1">Antal</text>
+                        <text x="-10" y="5">100</text>
+                        <text x="-8" y="52">50</text>
+                        <text x="-5" y="100">0</text>
+                        <text x="0" y="106">År</text>
+                        <text x="7" y="106">10</text>
+                        <text x="17" y="106">11</text>
+                        <text x="27" y="106">12</text>
+                        <text x="37" y="106">13</text>
+                        <text x="47" y="106">14</text>
+                        <text x="57" y="106">15</text>
+                        <text x="67" y="106">16</text>
+                        <text x="77" y="106">17</text>
+                        <text x="87" y="106">18</text>
+                        <text x="97" y="106">19</text>
+                        <text x="107" y="106">20</text>
+                        <line x1="0" x2="0" y1="100" y2="0" />
+                        <line x1="0" x2="118" y1="0" y2="0" />
+                        <line x1="0" x2="118" y1="50" y2="50" />
+                        <line x1="0" x2="118" y1="100" y2="100" />
+                        <line x1="118" x2="118" y1="100" y2="0" />
+                    </g>
+                    <g class="bars">
+                        <line x1="10" x2="10" y1="10" y2="100" />
+                        <line x1="20" x2="20" y1="10" y2="100" />
+                        <line x1="30" x2="30" y1="10" y2="100" />
+                        <line x1="40" x2="40" y1="10" y2="100" />
+                        <line x1="50" x2="50" y1="10" y2="100" />
+                        <line x1="60" x2="60" y1="10" y2="100" />
+                        <line x1="70" x2="70" y1="10" y2="100" />
+                        <line x1="80" x2="80" y1="10" y2="100" />
+                        <line x1="90" x2="90" y1="10" y2="100" />
+                        <line x1="100" x2="100" y1="10" y2="100" />
+                        <line x1="110" x2="110" y1="10" y2="100" />
+
+                    </g>
+                </svg>
+                <p> Antal øl </p>
+                <p id="holder"></p>
+            </div>
+
+        </section>
+
+
+
+
+        <footer id="kontakt">
+            <p>Carlsberg Danmark<br>
+                J. C. Jacobsens Gade 1<br>
+                1799 København<br><br>
+                <span style="color: grey">Carlsberg@MAIL.COM <br>
+                    +45 12323230</span>
+
+        </footer>
+
+
+
+
+
+
+        <! ----------JAVASCRIPT ---------->
+
+            <script>
+                // const erklære en variabel med værdien burger, nav-links, nav-links li///
+                const burger = document.querySelector('.burger');
+                const nav = document.querySelector('.nav-links');
+                const navLinks = document.querySelectorAll('.nav-links li');
+
+
+
+                burger.addEventListener('click', () => {
+                    //Toggle Nav
+                    nav.classList.toggle('nav-active');
+
+
+
+                    //Animate Links (forEach går i gennem hvert link/Element)
+                    navLinks.forEach((link, index) => {
+                        if (link.style.animation) {
+                            //(hvis der allerede er en animation så fjernes den)
+                            link.style.animation = ''
+                        } else {
+                            //(hvis der ikke er en animation, så tilføjes den
+                            link.style.animation = `navLinkFade 0.5s ease forwards ${(index / 6)+.4}s`;
+                        }
+                    });
+                    //Burger Animation (her fjernes eller påsættes toggle-klassen fra css)
+                    burger.classList.toggle('toggle');
+
+
+
+                });
+
+
+
+
+
+                // if/else gør hvad toggle gør behind the scenes //
+
+
+
+
+
+
+                // Index er en reference til rækkefølgen i en liste //
+
+
+
+                //${} når jeg brug for en variabel i en string. det tager værdien af index og dividerer det så jeg får aniamtioner med tidsforskel på .nav-links //
+
+
+
+                // () => er en funktion. //
+
+                const values = [2, 2, 2, 4, 6, 10, 16, 18, 26, 50, 57];
+                document.querySelectorAll(".bars line").forEach((bar, i) => {
+                    bar.setAttribute("y1", 100 - values[i]);
+                    bar.setAttribute("data-value", 0 - values[i]);
+                    bar.addEventListener("mouseover", e => vis(e));
+                });
+
+
+                function vis(e) {
+                    console.log(e.target);
+                    document.querySelector("#holder").textContent = e.target.dataset.value
+                }
+
+            </script>
+    </body>
+
+</html>
